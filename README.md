@@ -8,13 +8,13 @@ __*Link GitHub:*__ <https://github.com/francismsc/Mat-Project-Imfj1>
 
 ## __Projeto__
 
->Este projeto individual e um viewer  de uma pirâmide com uma base de n lados com todas as funcionalidades pedidas
+>Este projeto individual é um viewer  de uma pirâmide com uma base de n lados com todas as funcionalidades pedidas
 >
-> Para fazer este projeto peguei no projeto que jÁ tinha feito o ano passado em Imjf1 e adaptei para este projeto.
+> Para fazer este projeto peguei no projeto que já tinha feito o ano passado em Imjf1 e adaptei para este projeto.
 >
 >Para fazer o viewer utilizei também como base o sample_hierarchy.py
 >
-> Criei também as funções create_pyramid e create_triangle no mesh.py
+>Criei também as funções create_pyramid e create_triangle no mesh.py
 
 ## __Post Mortem__
 
