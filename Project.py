@@ -36,19 +36,17 @@ def main():
     # Moves the camera back 2 units
     scene.camera.position = Vector3(0, 0, -2)
 
-    # Create a cube and place it in a scene, at position (0,0,0)
-    obj1 = Object3d("UnknownPyramid")
+    # Create a pyramid of n sides and place it in a scene, at position (0,0,0)
+    obj1 = Object3d("Pyramid")
     obj1.scale = Vector3(1, 1, 1)
     obj1.position = Vector3(0, 0, 0)
-    obj1.mesh = Mesh.create_pyramid((0.5, 0.5, 0.5), 10, None)
+    # To change the amount of sides of the pyramid trade the 3 for the amount wanted
+    obj1.mesh = Mesh.create_pyramid((0.5, 0.5, 0.5), 3, None)
     obj1.material = Material(Color(1,0,0,1), "PyramidMaterial")
     scene.add_object(obj1)
 
 
-    # Create a second object, and add it as a child of the first object
-    # When the first object rotates, this one will also mimic the transform
-    # Specify the rotation of the object. It will rotate 15 degrees around the axis given,
-    # every second
+
     angle = 15
     axis = Vector3(0, 0, 0)
 

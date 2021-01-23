@@ -316,34 +316,48 @@ class Mesh:
 
     @staticmethod
     def create_pyramid(size, n, mesh = None):
+        """
+        Adds the vertices necessary to create a pyramid
+        If source mesh is not given, a new mesh is created
+
+        Arguments:
+
+            size {tuple} -- Size of the pyramid
+            n {int} -- Number of sides of on the base
+            mesh {Mesh} -- Mesh to add the polygons. If not given, create a new mesh
+
+        Returns:
+            {Mesh} - Mesh where the polygons were added
+        """
         if (mesh == None):
             mesh = Mesh("UnknownPyramid")
+        base = []
         angle = 360 / n
         for i in range(0, n):
+
             x = math.cos(math.radians(angle * i))
             y = math.sin(math.radians(angle * i))
-            Mesh.create_triangle(Vector3(size[0]*x, 0, 0), Vector3(0, 0, size[2]*y), Vector3(0, size[1], 0), i, mesh)
 
+            Mesh.create_triangle(Vector3(size[0]*x, 0, 0), Vector3(0, 0, size[2]*y), Vector3(0, size[1], 0), mesh)
+
+            base.append(Vector3(size[0]*x,-size[1],size[2]*y))
+        
+        mesh.polygons.append(base)
         
         return mesh
 
     @staticmethod
-    def create_triangle(origin, axis0, axis1, i, mesh):
+    def create_triangle(origin, axis0, axis1, mesh):
         if (mesh == None):
             mesh = Mesh("UnknownTriangles")
 
         triangles = []
     
-
         triangles.append(origin - axis0 - axis1)
         triangles.append(origin - origin + axis1)
 
          
         mesh.polygons.append(triangles)
-
-        
-
-        
 
         return mesh
 
